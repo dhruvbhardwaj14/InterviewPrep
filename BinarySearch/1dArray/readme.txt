@@ -1,0 +1,1 @@
+bs on typical 1d array is only possible if we need to find something within the given array

@@ -1,0 +1,1 @@
+{"name":"Local: rotateLeft","url":"/Users/dhruvbhardwaj/Desktop/Dhruv_Codes/DsaStriver/Arrays/Basic/rotateLeft.cpp","tests":[{"id":1737388382254,"input":"5 2\n1 2 3 4 5","output":"3 4 5 1 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/dhruvbhardwaj/Desktop/Dhruv_Codes/DsaStriver/Arrays/Basic/rotateLeft.cpp","group":"local","local":true}

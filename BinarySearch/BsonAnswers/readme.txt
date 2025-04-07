@@ -1,0 +1,1 @@
+binary search on answers is only applicable when in a range a least or minimum or maximum is asked 
