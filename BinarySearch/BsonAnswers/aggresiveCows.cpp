@@ -16,6 +16,7 @@ For each test case output one integer: the largest minimum distance.*/
 /*Approach- 
 Bs on Answers to find min(max) or max(min)
 mid- denote the distance value by which it is possible to allocate all k cows in our x
+now binary search a distance from 1 to maximum distance between all barns(x[n-1]-x[0]) and see if we can allocate all k cows there then go right side and search for a larger value which can satisfy this while if not then go to left side of it
 */
 bool canPlace(vector<int> x,int mid,int k){
     int cnt=1;
