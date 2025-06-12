@@ -25,15 +25,34 @@ Approach -
 */
 bool dfs(int i,vector<vector<int>>& graph,vector<int>& color,int currColor){
     color[i]=currColor;
-    for(auto edge:graph[i]){
-        if(color[edge]==-1){
-        if(dfs(edge,graph,color,!currColor)==false) return false;
+    for(auto adjNode:graph[i]){
+        if(color[adjNode]==-1){
+        if(dfs(adjNode,graph,color,!currColor)==false) return false;
         }
-        else if (color[edge]==currColor){
+        else if (color[adjNode]==currColor){
             return false;
         }
     }
     return true;
+}
+bool bfs(int i,vector<vector<int>>& graph,vector<int>& color,int currColor){
+    queue<pair<int,int>> q;
+    q.push({i,currColor});
+    color[i]=currColor;
+    while(!q.empty()){
+        int node=q.front().first;
+        int nodeClr=q.front().second;
+        q.pop();
+        for(auto child:graph[node]){
+            if(color[child]==-1){
+                q.push({child,!nodeClr});
+                color[child]=!nodeClr;
+            }
+            else if(color[child]==nodeClr) return false;
+        }
+    }
+    return true;
+
 }
 bool isBipartite(vector<vector<int>>& graph) {
     int n=graph.size();
@@ -41,7 +60,8 @@ bool isBipartite(vector<vector<int>>& graph) {
     int currColor=0; 
     for(int i=0;i<n;i++){
         if(color[i]==-1)
-        if(!dfs(i,graph,color,currColor)) return false;
+        // if(!dfs(i,graph,color,currColor)) return false;
+        if(!bfs(i,graph,color,currColor)) return false;
     }
     return true;
 }

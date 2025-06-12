@@ -20,7 +20,31 @@ ans since we have n-1 edges in worst case that means that node at bottom is the 
 q. how to detect negative cycle?
 ans if at nth iteration still a relaxation happens that means there is a negative weight cycle.
 */
-
+vector<int> bellmanFord(int V, vector<vector<int>>& edges, int src) {
+    vector<int> dist(V,1e8);
+    dist[src]=0;
+    //run n-1 times
+    for(int i=0;i<V;i++){
+            for(auto edge:edges){
+            int u=edge[0];
+            int v=edge[1];
+            int w=edge[2];
+            if(dist[u]!=1e8 && w+dist[u]<dist[v]){
+                dist[v]=dist[u]+w;
+            }
+        }
+    }
+    //Nth relaxation to check negative cycle
+    for(auto edge:edges){
+        int u=edge[0];
+        int v=edge[1];
+        int w=edge[2];
+        if(dist[u]!=1e8 && w+dist[u]<dist[v]){
+            return {-1};
+        }
+    }
+    return dist;
+}
 int main(){
   
     return 0;
