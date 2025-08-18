@@ -5,7 +5,7 @@ template binary search
 determine range [lo,hi]
 while(){
     check()
-    if(condition with check return value of check ) and/lo=Mid+1
+    if(condition with check return value of check ) ans/lo=Mid+1
     else ans/hi=mid-1
 }
 return ans;

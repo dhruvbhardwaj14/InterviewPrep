@@ -59,7 +59,7 @@ int main(){
             }
         }
         swap(nums[idx],nums[ind]);
-        sort(nums.begin()+idx+1,nums.end());
+        reverse(nums.begin()+idx+1,nums.end());
     }
     for (int i = 0; i < n; i++)
     {

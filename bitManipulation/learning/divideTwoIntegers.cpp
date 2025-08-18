@@ -13,7 +13,7 @@ Note: Assume we are dealing with an environment that could only store integers w
 Approach- 
 Approach to Integer Division Without Using /, \*, or %:
 1. Edge Case Handling:
-   * If dividend == INT\_MIN and divisor == -1, return INT\_MAX to avoid overflow.
+   * If dividend == INT_MIN and divisor == -1, return INT_MAX to avoid overflow.
    * If dividend == divisor, return 1 directly.
 2. Determine Result Sign:
    * Use a boolean 'sign':
@@ -25,7 +25,7 @@ Approach to Integer Division Without Using /, \*, or %:
 4. Bitwise Division Loop:
    * While numerator (n) >= denominator (d):
      * Use a counter (cnt) to find the highest power such that (d << (cnt + 1)) <= n.
-     * This finds how many times (d \* 2^cnt) fits into n.
+     * This finds how many times (d * 2^cnt) fits into n.
      * Add (1 << cnt) to the answer.
      * Subtract (d \* (1 << cnt)) from n.
 5. Return Final Result:

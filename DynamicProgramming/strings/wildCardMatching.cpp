@@ -100,8 +100,8 @@ Final answer is `dp[n][m]`
 */
 // recursive
 bool getMatch(string s,string p,int i,int j){
-    if(i<0 && j<0) return true; //s gets exhausted
-    if(j<0 && i>=0) return false;
+    if(i<0 && j<0) return true; //both gets exhausted
+    if(j<0 && i>=0) return false;//p gets exhausted that means not matched 
     if(i<0 && j>=0){ //if s gets exhausted and p not exhausted that must mean all rest in p must be * now
         for (int k = 0; k <=j; k++)
         {
